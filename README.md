@@ -1,6 +1,6 @@
 # OSINT & Digital Forensics Investigation
 
-> **Open-Source Intelligence techniques and tools for digital crime investigations**
+> A practical cybersecurity project exploring how Open-Source Intelligence (OSINT) tools can support digital crime investigations through entity mapping, infrastructure discovery, and investigative analysis.
 
 ![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-red)
 ![OSINT](https://img.shields.io/badge/Focus-OSINT-blue)
@@ -8,442 +8,173 @@
 ![Maltego](https://img.shields.io/badge/Tool-Maltego-orange)
 ![Shodan](https://img.shields.io/badge/Tool-Shodan-black)
 
-## 📌 Overview
+Introduction
 
-This project explores the use of **Open-Source Intelligence (OSINT)** techniques and tools within **digital crime and forensic investigations**.
+OSINT formally known as Open-Source intelligence is a tool used to gather publicly available information from a large number of sources such as social media platforms, news articles, websites and databases. Within investigating digital crime OSINT can help to uncover valuable intelligence to support law enforcement in identifying criminal activity and can be used in the chain of custody to gain convictions. The use of OSINT tools can help to track online behaviour uncovering connections between criminals and monitor emerging threats in real time. The accessible nature of OSINT as an open source make it cost efficient method to gather intelligence without breaching privacy laws. In this report there will be an examination of the effectiveness and practical applications of OSINT tools in digital crime investigations. The report aims to evaluate how platforms that are OSINT assist in gathering open-source data to support investigative decision making.
 
-The project evaluates how publicly available information can be collected, analysed, and correlated to support investigative decision-making. It examines several OSINT approaches and tools, with particular focus on **Maltego** for graphical link analysis and **Shodan** for internet-connected device discovery.
+Methodology
 
-The practical investigation demonstrates how **Maltego** can be used to begin with a single entity or identifier and progressively map relationships between publicly available digital entities.
+The methodology will be a mix of qualitative research and technical evaluation of selected OSINT tools that can be used in digital forensics investigations. Data collection cane be publicly available from diverse sources whilst maintaining operational security. The first time of collection will be passive collection osint from scraping websites, using APIs (Twitter, LinkedIn) or deep web sources. There is the need to monitor public social media posts, analyse GitHub repositories and active scraping of public records. The next time of collection would be semi-passive collection using automated reconnaissance tools that stimulate regular browsing patterns. This will encompass sending traffic that mimics normal internet behaviour to forbidden by law information while staying undetected. Then the final method is active collection so direct probing with targets (ports scans, vulnerability assessments and social engineering, entailing network scanning, friend requests to private profiles and direct messaging (Gill, 2023).
+ The focus will be on the tool’s usability, functionality and integration of these tools used for investigations of digital crimes. The primary tools used in OSINT investigations include:
+•	Maltego used for network mapping
+•	Shodan for device discovery
+•	Google Dorks for targeted web searches
+•	Social media scraping tools used for online presence analysis.
+These tools work in conjunction with each other and there will be a comparative approach assessing how they all collect and process data from various open sources to help to identify:
+•	Identifying threat actors
+•	Mapping digital infrastructures
+•	Uncovering entities such as domains, IP addresses, email account and analysing the relationships between them (Hassan, 2025).
+Comparison of two major tools
+Below is a comparison table of two major OSINT tools used to conduct digital crime investigations. The table highlights the benefits and the impacts.
+Tool	Benefits	Impacts
 
-The project also considers the benefits, limitations, ethical concerns, and operational challenges associated with using OSINT during digital investigations.
+Maltego	GLA (graphical link analysis): Visualises relationships between entities for easier interpretation. 
 
----
+OSINT integration: Pulls data from social media, WHOIS, DNS, breach database.
 
-## 🎯 Objectives
+Transforms: Automates expansion of leads into connected entities.
 
-The main objectives of this project were to:
+Collaboration: Teams can share investigation graphs (cybervie, 2021).	Steep learning curve: Requires training to use effectively.
 
-* Examine the role of OSINT in digital crime investigations.
-* Evaluate the effectiveness of selected OSINT tools.
-* Investigate how publicly available information can support digital investigations.
-* Compare the capabilities and limitations of **Maltego** and **Shodan**.
-* Demonstrate an OSINT investigation workflow using Maltego.
-* Explore entity and relationship mapping during an investigation.
-* Identify potential digital connections between online entities.
-* Consider ethical, privacy, and data-access limitations associated with OSINT.
-* Evaluate how OSINT can support investigative decision-making.
+Limited free edition: Community version restricts results per transform.
 
----
+Dependent on data sources: Quality of results depends on connected APIs and datasets.
 
-## 🧠 What is OSINT?
+Resource intensive: Graphs can become complex and heavy to process.
 
-**Open-Source Intelligence (OSINT)** involves the systematic collection and analysis of information that is publicly available from sources such as:
+Shodan	Device discovery: Identifies exposed IoT, servers and industrial systems.
 
-* Websites
-* Social media platforms
-* Search engines
-* Public databases
-* Online records
-* Technical infrastructure
-* Publicly accessible repositories
+Real time exposure monitoring: Helps track network assets visible on the internet.
 
-Within digital investigations, OSINT can help investigators identify relationships, online activity, digital infrastructure, and other information relevant to an investigation.
+Simple queries: Easy to search by port or organisation (djekic, 2023).	Surface-level data: Focuses on banners and metadata and not deep relationships.
 
-However, information being publicly accessible does not necessarily mean that it is unrestricted, reliable, or appropriate to use without consideration of legal and ethical requirements.
+Snapshot-based: May not reflect current device status.
 
-This project therefore considers both the **investigative value and potential risks of OSINT**.
+Potential false positives: Results can be outdated or misclassified (djekic, 2023).
 
----
 
-## 🛠️ Tools & Technologies
 
-### Maltego
 
-**Maltego** was selected as the primary investigation tool because of its graphical link-analysis capabilities.
 
-The project explores how Maltego can be used to:
 
-* Create investigation graphs.
-* Represent individuals and other entities.
-* Run transforms against entities.
-* Discover relationships between entities.
-* Map aliases and online identities.
-* Investigate publicly available online profiles.
-* Visualise complex relationships.
 
-Maltego was particularly useful because relationships can be represented visually, allowing investigators to expand an initial lead into potentially connected entities.
 
-### Shodan
+The methodology diagram below describes the best process taken to choose a tool to conduct a digital forensic investigation. 
+ 
+Figure 1. Methodology diagram
 
-**Shodan** was evaluated as a complementary OSINT tool for discovering internet-connected devices and systems.
+<img width="613" height="474" alt="a1" src="https://github.com/user-attachments/assets/a94a07c8-7401-454d-a72b-77083fbb49a5" />
 
-The project examined capabilities including:
 
-* Device discovery.
-* Internet-facing infrastructure analysis.
-* Port-based searches.
-* Organisation-based searches.
-* Network exposure monitoring.
 
-The project also identified limitations such as potentially outdated information, false positives, and the fact that Shodan primarily provides technical metadata rather than the deeper relationship mapping available through Maltego.
+Findings and scenarios
+After careful consideration the chosen OSINT tool suitable for investigating an alias by the name of Faisal Saleem is Maltego. The reason for selecting this tool to is because it’s a powerful tool for link analysis as it allows mapping relationships, organisation and digital entities as in this case. It’s a tool that is widely used by the cybersecurity and law enforcement agencies because it can help to show any hidden connections quickly. The entity mapping means that an investigator can start with one lead such as a name as an entity and then expand into connected domains or accounts. The system integrates with external data providers such as WHOSIS and social media. The visualisations tools such as interactive graphs make complex investigations much easier to interpret. 
 
-### Additional OSINT Techniques
+OSINT investigation process and flowchart
 
-The research also considers:
+The diagram below illustrates a systematic investigation process for using Maltego with three main phases. The first phase is configuration of the Maltego parameters and tools for the Faisal Saleem investigation. The next phase is the data collection stage involving gathering and analysing social media information, particularly Instagram profiles. The last phase is the analysis and verification stage validating findings and generating reports.
+ 
+Figure 2. the investigative work flow diagram
 
-* Search-engine intelligence
-* Google Dorks
-* Social-media intelligence
-* Public-record research
-* Website analysis
-* GitHub research
-* Entity correlation
-* Digital infrastructure analysis
 
----
+<img width="614" height="182" alt="a2" src="https://github.com/user-attachments/assets/9d51b581-de75-46bc-9497-f003a65efca9" />
 
-## 🔬 Methodology
 
-The project used a combination of **qualitative research and technical evaluation** of selected OSINT tools.
+List of transforms/plugins for data mining- this allows access to various types of application servers using the data hub.
 
-The investigation methodology focused on evaluating tools according to their:
 
-1. **Usability**
-2. **Functionality**
-3. **Data collection capabilities**
-4. **Relationship analysis**
-5. **Investigation usefulness**
-6. **Limitations and potential risks**
+ 
+Figure 3. Maltego main screen
 
-The overall investigation process can be represented as:
 
-```text
-Initial Investigation Lead
-          │
-          ▼
-   Tool Selection
-          │
-          ▼
-   Maltego Configuration
-          │
-          ▼
-    Create New Graph
-          │
-          ▼
-     Add Entity
-          │
-          ▼
-   Run Transforms
-          │
-          ▼
-   Collect Results
-          │
-          ▼
- Relationship Mapping
-          │
-          ▼
-Analysis & Verification
-          │
-          ▼
- Investigation Report
-```
+<img width="581" height="284" alt="a3" src="https://github.com/user-attachments/assets/3ab3cc2e-ae61-40a9-a166-489766b6bf83" />
 
-The report identifies three broad stages within the practical workflow:
 
-* **Configuration**
-* **Data collection and analysis**
-* **Analysis and verification**
 
----
+Here is an example of a transform, which allows web developers to feature special information in web searches.
+ 
+Figure 4. Maltego, transform is one of the options in the entity palette
 
-## 🕵️ Practical Investigation
 
-The practical component used **Maltego** to investigate an alias and demonstrate how a single entity can be expanded into a wider network of potentially related digital entities.
+<img width="580" height="244" alt="a4" src="https://github.com/user-attachments/assets/56bdca64-0a8e-40aa-8b1e-c0fc8b9f8258" />
 
-The investigation followed a structured process:
 
-### 1. Configure the Investigation
+Once you have selected the plugins you can perform your search by selecting a new graph from the menu and is accessed like this.
+ 
+Figure 5.Maltego, create new graph tab
 
-Maltego was configured with the required plugins/transforms for the investigation.
 
-### 2. Create a New Graph
+<img width="601" height="231" alt="a5" src="https://github.com/user-attachments/assets/f7f2f9a3-911b-47f6-84ad-08d1fdbf0727" />
 
-A new Maltego graph was created to act as the investigation workspace.
 
-### 3. Add an Entity
 
-A person entity was selected from the entity palette and added to the investigation graph.
+A blank graph will appear allowing you to start a new case.
+ 
+Figure 6.Maltego, new graph screen
 
-### 4. Enter the Investigation Identifier
 
-The selected alias was entered into the person entity.
+<img width="614" height="252" alt="a6" src="https://github.com/user-attachments/assets/aff23a53-d038-4dfc-bbb1-2ce5526a69da" />
 
-### 5. Run Transforms
+The next step is to access the entity palette and if you are conducting an investigation on a person(entity) then you can type person to get the drag and drop icon to begin the mapping process, which shown below.
+ 
+Figure 7. Maltego, entity search
 
-Available transforms were used to search for potentially related information.
 
-### 6. Analyse Relationships
+<img width="556" height="210" alt="a7" src="https://github.com/user-attachments/assets/49251673-86dd-4e72-9e10-2eb5e2f3b54e" />
 
-The resulting entities were represented visually within the Maltego graph.
 
-### 7. Investigate Online Presence
+Once we have dragged and dropped the person entity from the palette on to the graph, we can then add the name of the entity we wish to find out the information on as shown below.
+ 
+Figure 8. Maltego, entity ready for investigation
 
-The project examined potential connections to online platforms and repositories, including GitHub and Instagram.
 
-### 8. Interpret the Results
+<img width="565" height="216" alt="a8" src="https://github.com/user-attachments/assets/f255d99e-ada3-4546-bd21-ea55ef78b4da" />
 
-The resulting relationships were analysed to determine how effectively Maltego could support the investigation.
 
-The practical report documents this workflow through screenshots of the Maltego interface, entity selection, transforms, graph creation, and resulting mappings.
+The next step is to right click onto the person entity where the list of plugins/ transforms is available to conduct searches. Which is shown below:
+ 
+Figure 9. Maltego, select plugin
 
----
 
-## 📊 Maltego vs Shodan
+<img width="555" height="130" alt="a9" src="https://github.com/user-attachments/assets/4f36fc77-0e82-4bcd-a3b0-5491c7582059" />
 
-| Feature                       | Maltego                             | Shodan                              |
-| ----------------------------- | ----------------------------------- | ----------------------------------- |
-| Primary purpose               | Graphical link analysis             | Internet-connected device discovery |
-| Relationship mapping          | ✅ Strong                            | ⚠️ Limited                          |
-| Entity visualisation          | ✅ Yes                               | ❌ Limited                           |
-| Infrastructure discovery      | ✅ Supported                         | ✅ Strong                            |
-| Social/online entity analysis | ✅ Supported through data sources    | ⚠️ Limited                          |
-| Graph-based investigations    | ✅ Yes                               | ❌ No                                |
-| Simple searches               | ⚠️ Requires learning                | ✅ Yes                               |
-| Data-source dependency        | ✅ Yes                               | ✅ Yes                               |
-| Investigation complexity      | Can become resource-intensive       | Generally simpler                   |
-| Main strength                 | Connecting and visualising entities | Discovering exposed infrastructure  |
 
-The project identified several advantages and limitations for each tool. Maltego provides graphical link analysis and automated transforms but has a steeper learning curve and depends on available data sources. Shodan provides relatively straightforward infrastructure discovery but focuses more heavily on technical metadata and can produce outdated or potentially false-positive results.
+Select to run all datasets transforms as seen below
+ 
+Figure 10. Maltego datasets transforms
 
----
 
-## 📈 Key Findings
+<img width="602" height="222" alt="a10" src="https://github.com/user-attachments/assets/07008195-26a7-440d-8d17-d76fa2c71c58" />
 
-The investigation demonstrated that Maltego can act as a **link-analysis platform for OSINT investigations**, allowing an investigator to begin with an individual lead and expand the investigation through related entities.
 
-Key observations included:
+9.	Select to run all datasets transforms will show all the alias under the name faisal saleem.
+ 
+Figure 11. Maltego, alias mapping
 
-* Graph-based analysis can make complex relationships easier to interpret.
-* Automated transforms can accelerate information discovery.
-* Multiple OSINT sources can provide a broader investigative picture.
-* Entity mapping can help identify relationships between online identities and other digital entities.
-* The effectiveness of results depends heavily on the availability and quality of underlying data sources.
-* OSINT tools require appropriate training to be used effectively.
-* Publicly available information can still present privacy and ethical concerns.
-* Results should be analysed and verified rather than automatically treated as evidence.
 
-The project concluded that Maltego was particularly suitable for the demonstrated investigation because of its ability to visually map relationships between entities.
 
----
+<img width="612" height="253" alt="a11" src="https://github.com/user-attachments/assets/037c08ba-e84b-4d6b-b21f-9b31a98e2253" />
 
-## ⚠️ Ethical & Legal Considerations
 
-OSINT investigations must be conducted responsibly.
+If we choose to a search for all GitHub profiles under this name, in the same way you click the plugin and press enter and a new map is made as seen below showing all the GitHub in the name Faisal saleem.
+ 
+Figure 12. Maltego, GitHub search under alias names
 
-Information being publicly accessible does not automatically mean that it should be collected, stored, or used without restrictions.
 
-Important considerations include:
+<img width="566" height="294" alt="a12" src="https://github.com/user-attachments/assets/bce90a82-0497-41e9-b6dc-990e707db94e" />
 
-* Privacy
-* Data protection
-* Legal authority
-* Accuracy of information
-* False positives
-* Source reliability
-* Evidence integrity
-* Responsible disclosure
-* Avoiding unnecessary collection of personal information
+Below is another search for everybody Instagram profiles with this name (Faisal Saleem).  
 
-This project recognises the dual-use nature of OSINT: the same publicly available information that can support investigators can potentially be abused by malicious actors.
 
-For this reason, this repository should **not contain unnecessary personal information, private credentials, sensitive identifiers, or unrestricted copies of investigative data**.
+Figure 13.Maltego, Instagram search under alias name
 
----
+Discussion of results (or Analysis or Interpretation)
 
-## 🔐 Responsible Use
+Analysing the finding of Maltego it is correct to say that Maltego is a magnifying glass for investigators as they can start with a single clue such as a suspicious domain and you can uncover entire networks related to the entity. This makes it an excellent tool for threat intelligence and digital forensics. Upon successful completion of the investigation the alias social media profile could be accessed to gain credible open-source intelligence to make a profile for the chain of custody with evidence to incriminate if necessary.
+  
+Conclusions and Recommendations
 
-This project is intended for:
+During the investigation phase, using Maltego and search using alias faisal saleem it’s evident that the tool uses sophisticated algorithms to identify and map relationships across media platforms thus creating detailed visual maps. This is advantageous as the platforms automated capabilities allow for large datasets to be processed quickly saving time in investigations and better productivity. The platform leverages technology to analyse social media presence in particular Instagram in this case by collecting and analysing profile information and metadata. 
 
-* Cybersecurity education
-* OSINT research
-* Digital-forensics learning
-* Security research
-* Academic demonstration
-* Investigative methodology development
 
-It should **not** be used to:
 
-* Harass individuals.
-* Dox individuals.
-* Obtain unauthorised access to accounts or systems.
-* Circumvent access controls.
-* Collect sensitive personal information unnecessarily.
-* Conduct unauthorised reconnaissance against systems.
-* Facilitate malicious activity.
-
-Only information that is lawfully accessible and appropriate for the investigation should be collected and analysed.
-
----
-
-## 📁 Repository Structure
-
-```text
-.
-├── README.md
-├── report/
-│   └── OSINT_Digital_Forensics_Report.pdf
-│
-├── methodology/
-│   ├── methodology-diagram.png
-│   └── investigation-workflow.png
-│
-├── screenshots/
-│   ├── maltego-main-screen.png
-│   ├── entity-search.png
-│   ├── transform-selection.png
-│   └── investigation-graph.png
-│
-├── findings/
-│   └── investigation-summary.md
-│
-├── references/
-│   └── references.md
-│
-├── LICENSE
-└── .gitignore
-```
-
-> **Note:** Update the filenames above to match the actual files included in the repository.
-
----
-
-## 📷 Screenshots
-
-Screenshots from the practical investigation can be placed in the `screenshots/` directory.
-
-Example:
-
-```markdown
-![Maltego Investigation Graph](screenshots/investigation-graph.png)
-```
-
-Recommended screenshots include:
-
-* Maltego main interface
-* Entity palette
-* New investigation graph
-* Person entity
-* Transform selection
-* Transform results
-* Relationship/alias mapping
-* Final investigation graph
-
-**Before publishing screenshots, remove or anonymise personal information that does not need to be publicly displayed.**
-
----
-
-## 📚 Research Areas
-
-This project covers several areas of cybersecurity and digital investigation:
-
-```text
-Cybersecurity
-│
-├── Open-Source Intelligence
-│   ├── Search Intelligence
-│   ├── Social Media Intelligence
-│   ├── Public Records
-│   └── Digital Footprinting
-│
-├── Digital Forensics
-│   ├── Evidence Analysis
-│   ├── Investigation Methodology
-│   └── Evidence Verification
-│
-├── Threat Intelligence
-│   ├── Entity Analysis
-│   ├── Infrastructure Discovery
-│   └── Relationship Mapping
-│
-└── Investigative Technology
-    ├── Maltego
-    ├── Shodan
-    ├── Google Dorks
-    └── Social Media Analysis
-```
-
----
-
-## 💡 Skills Demonstrated
-
-This project demonstrates practical and research-based skills in:
-
-* 🔎 OSINT investigation
-* 🕵️ Digital investigation methodology
-* 🧩 Link and relationship analysis
-* 🌐 Digital footprint analysis
-* 📊 Data interpretation
-* 🔗 Entity correlation
-* 🛡️ Cybersecurity research
-* 📚 Academic research
-* ⚖️ Ethical considerations in cybersecurity
-* 🧠 Critical evaluation of investigative tools
-
----
-
-## 📖 References
-
-The project was informed by research and sources including:
-
-* Cybervie — *What is Maltego? | How to use it for Information Gathering*
-* Cyber Defense Magazine — *The Shodan as The Scariest Search Engine of Today*
-* SANS Institute — *What is OSINT (Open-Source Intelligence?)*
-* Authentic8 — *OSINT for law enforcement and crime prevention*
-* Barracuda — *Understanding the importance of OSINT in modern research*
-* Imperva — *Open-Source Intelligence (OSINT) | Techniques & Tools*
-* Larsen, O.H., Ngo, H.Q. and Le-Khac, N.-A. (2023) — research on law-enforcement use of OSINT techniques
-* Pai U., Y. and K., K.P. (2021) — *Open Source Intelligence and its Applications in Next Generation Cyber Security*
-* Vaughan, A. (2024) — *The Role of OSINT in Criminal Investigations*
-* Wells, D. and Gibson, H. (2017) — *OSINT from a UK perspective*
-
-The complete bibliography is available in the accompanying project report.
-
----
-
-## 🚀 Future Improvements
-
-Potential future development could include:
-
-* Expanding the comparison to additional OSINT platforms.
-* Developing a repeatable OSINT investigation framework.
-* Adding automated data-processing components.
-* Introducing structured evidence-recording procedures.
-* Evaluating additional social-media intelligence techniques.
-* Comparing different approaches to entity resolution.
-* Investigating machine-learning and AI applications within OSINT.
-* Developing improved methods for validating OSINT findings.
-
-The original research also identifies the potential for machine learning, deep learning, and AI to support future OSINT and digital-forensics applications.
-
----
-
-## ⚖️ Disclaimer
-
-This repository is intended for **educational, research, and cybersecurity portfolio purposes**.
-
-All investigation techniques should be performed only against information and systems that you are legally authorised to investigate.
-
-Any examples, screenshots, identities, or investigative data published in this repository should be appropriately anonymised where necessary.
-
-The author does not endorse the misuse of OSINT techniques for harassment, unauthorised access, privacy violations, or other unlawful activity.
-
----
-
-## 👤 Author
-
-**[FAISAL SALEEM]**
-
-
-
-**Topics:** `cybersecurity` `osint` `digital-forensics` `maltego` `shodan` `threat-intelligence` `cyber-investigation` `information-security` `open-source-intelligence`
